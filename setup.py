@@ -19,7 +19,7 @@ setup(
     long_description_content_type='text/x-rst',
     url='https://weisslab.cs.ucl.ac.uk/StephenThompson/sksurgeryspherefitting',
     author='Stephen Thompson',
-    author_email='YOUR-EMAIL@ucl.ac.uk',
+    author_email='s.thompson@ucl.ac.uk',
     license='BSD-3 license',
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -34,7 +34,6 @@ setup(
 
 
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
 
         'Topic :: Scientific/Engineering :: Information Analysis',
@@ -47,12 +46,15 @@ setup(
         exclude=[
             'doc',
             'tests',
+            'data'
         ]
     ),
 
     install_requires=[
-        'six>=1.10',
         'numpy>=1.11',
+        scipy,
+        vtk,
+        scikit-surgeryvtk
     ],
 
     entry_points={
