@@ -80,42 +80,6 @@ test Windows:
   tags:
     - shared-win
 
-# Template for deploy stages that depend on 'build docs'
-# if the build stage is skipped, skip these also
-.deploy-docs-skip-template: &deploy-docs-skip-template
-  stage: deploy
-  when: manual
-  except:
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /\[skip[ _-]build?\]/i
-  dependencies:
-    - build docs
-
-deploy docs to staging:
-  <<: *deploy-docs-skip-template
-  script:
-    # Note: the group/username directory must already exist on the server before calling this command
-    - rsync -avz -e'ssh -v' --numeric-ids --delete doc/build/html/* staging_docs_rsync:StephenThompson/sksurgeryspherefitting 2>&1
-  tags:
-    - docs-staging
-  environment:
-    name: staging
-    url: http://weisslab-lin.cs.ucl.ac.uk/staging/StephenThompson/sksurgeryspherefitting
-  only:
-    - master
-
-deploy docs to production:
-  <<: *deploy-docs-skip-template
-  script:
-    # Note: the group/username directory must already exist on the server before calling this command
-    - rsync -avz -e'ssh -v' --numeric-ids --delete doc/build/html/* production_docs_rsync:StephenThompson/sksurgeryspherefitting 2>&1
-  tags:
-    - docs-production
-  environment:
-    name: production
-  only:
-    - public
-
 deploy pip to PyPI:
   stage: deploy
   when: manual
@@ -124,7 +88,7 @@ deploy pip to PyPI:
 
   environment:
     name: PyPI
-    url: https://pypi.python.org/pypi/sksurgeryspherefitting
+    url: https://pypi.python.org/pypi/scikit-surgery-sphere-fitting
 
   tags:
     - pip-production
