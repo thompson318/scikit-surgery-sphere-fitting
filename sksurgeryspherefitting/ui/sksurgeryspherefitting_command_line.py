@@ -11,26 +11,20 @@ from sksurgeryspherefitting.ui.sksurgeryspherefitting_demo import run_demo
 def main(args=None):
     """Entry point for scikit-surgery-sphere-fitting application"""
 
-    parser = argparse.ArgumentParser(description='scikit-surgery-sphere-fitting')
+    parser = argparse.ArgumentParser(
+        description='scikit-surgery-sphere-fitting')
 
     ## ADD POSITIONAL ARGUMENTS
-    parser.add_argument("x",
-                        type=int,
-                        help="1st number")
-
-    parser.add_argument("y",
-                        type=int,
-                        help="2nd number")
+    parser.add_argument("model",
+                        type=str,
+                        help="Filename for vtk surface model")
 
     # ADD OPTINAL ARGUMENTS
-    parser.add_argument("-m", "--multiply",
-                        action="store_true",
-                        help="Enable multiplication of inputs."
-                        )
-
-    parser.add_argument("-v", "--verbose",
-                        action="store_true",
-                        help="Enable verbose output",
+    parser.add_argument("-o", "--output",
+                        required=False,
+                        type=str,
+                        default="",
+                        help="Write the fitted sphere to file"
                         )
 
     version_string = __version__
@@ -38,8 +32,10 @@ def main(args=None):
     parser.add_argument(
         "--version",
         action='version',
-        version='scikit-surgery-sphere-fitting version ' + friendly_version_string)
+        version='scikit-surgery-sphere-fitting version '
+        + friendly_version_string
+        )
 
     args = parser.parse_args(args)
 
-    run_demo(args.x, args.y, args.multiply, args.verbose)
+    run_demo(args.model, args.output)
