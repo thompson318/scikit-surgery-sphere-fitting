@@ -4,3 +4,5 @@
 # doc/requirements.rst
 numpy
 scipy
+vtk
+scikit-surgeryvtk
