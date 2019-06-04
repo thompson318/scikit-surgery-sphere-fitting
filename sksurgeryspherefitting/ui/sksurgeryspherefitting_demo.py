@@ -29,8 +29,8 @@ def run_demo(model_file_name, output="", configfile=False):
             bounds = configuration.get("bounds")
         if "fixed radius" in configuration:
             radius = configuration.get("fixed radius")
-            bounds = ((-inf, -inf, -inf, radius),
-                      (inf, inf, inf, radius))
+            bounds = ((-inf, -inf, -inf, radius - 1e-6),
+                      (inf, inf, inf, radius + 1e-6))
 
     result = sphere_fitting.fit_sphere_least_squares(x_values,
                                                      y_values,
@@ -39,6 +39,7 @@ def run_demo(model_file_name, output="", configfile=False):
                                                      bounds=bounds)
 
     print("Result is {}".format(result))
+    print("Result is", result.x)
 
     if output != "":
 

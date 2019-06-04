@@ -27,6 +27,15 @@ def main(args=None):
                         help="Write the fitted sphere to file"
                         )
 
+    # ADD OPTINAL ARGUMENTS
+    parser.add_argument("-c", "--config",
+                        required=False,
+                        type=str,
+                        default="",
+                        help="An optional configuration file."
+                        )
+
+
     version_string = __version__
     friendly_version_string = version_string if version_string else 'unknown'
     parser.add_argument(
@@ -38,4 +47,4 @@ def main(args=None):
 
     args = parser.parse_args(args)
 
-    run_demo(args.model, args.output)
+    run_demo(args.model, args.output, args.config)
