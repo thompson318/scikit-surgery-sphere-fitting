@@ -9,15 +9,6 @@ import six
 
 # Pytest style
 
-#def test_using_pytest_sksurgeryspherefitting():
-#    x = 1
-#    y = 2
-#    verbose = False
-#    multiply = False
-
-#    expected_answer = 3
-#    assert run_demo(x, y, multiply, verbose) == expected_answer
-
 def test_fit_sphere_least_squares():
 
     x_centre = 1.0
@@ -51,8 +42,8 @@ def test_fit_sphere_least_squares():
 
     parameters = [0.0, 0.0, 0.0, 0.0]
     result = sphere_fitting.fit_sphere_least_squares (xs, ys, zs, parameters)
-    numpy.testing.assert_approx_equal (result[0][0],  x_centre, significant = 10)
-    numpy.testing.assert_approx_equal (result[0][1],  y_centre, significant = 10)
-    numpy.testing.assert_approx_equal (result[0][2],  z_centre, significant = 10)
-    numpy.testing.assert_approx_equal (result[0][3],  radius, significant = 10)
+    numpy.testing.assert_approx_equal (result.x[0],  x_centre, significant = 10)
+    numpy.testing.assert_approx_equal (result.x[1],  y_centre, significant = 10)
+    numpy.testing.assert_approx_equal (result.x[2],  z_centre, significant = 10)
+    numpy.testing.assert_approx_equal (result.x[3],  radius, significant = 10)
 

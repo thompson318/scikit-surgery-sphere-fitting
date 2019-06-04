@@ -33,7 +33,7 @@ Example usage:
 
 ::
 
-    python sksurgeryspherefitting.py polydata_in.vtp --output polydatata_in.vtp
+    python sksurgeryspherefitting.py polydata_in.vtp --output polydatata_out.vtp
 
 It was created in part to provide a simple demonstration of algorithm development as part of a
 program of SNAPPY Tutorials, but also provides a useful service should you want to fit a sphere

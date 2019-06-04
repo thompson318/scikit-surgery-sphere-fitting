@@ -2,10 +2,13 @@
 """ Module for fitting a sphere to a list of 3D points """
 
 #scipy has a nice least squares optimisor
-from scipy.optimize import leastsq
+from scipy.optimize import least_squares
 import numpy
 
-def fit_sphere_least_squares(x_values, y_values, z_values, initial_parameters):
+def fit_sphere_least_squares(x_values, y_values, z_values, initial_parameters,
+                             bounds=
+                             ((-numpy.inf, -numpy.inf, -numpy.inf, -numpy.inf),
+                              (numpy.inf, numpy.inf, numpy.inf, numpy.inf))):
     """
     Uses scipy's least squares optimisor to fit a sphere to a set
     of 3D Points
@@ -17,8 +20,9 @@ def fit_sphere_least_squares(x_values, y_values, z_values, initial_parameters):
             coordinates.
     :param: an array containing four initial values (centre, and radius)
     """
-    return leastsq(_calculate_residual_sphere, initial_parameters,
-                   args=(x_values, y_values, z_values))
+    return least_squares(_calculate_residual_sphere, initial_parameters,
+                         bounds=bounds,
+                         args=(x_values, y_values, z_values))
 
 def _calculate_residual_sphere(parameters, x_values, y_values, z_values):
     """

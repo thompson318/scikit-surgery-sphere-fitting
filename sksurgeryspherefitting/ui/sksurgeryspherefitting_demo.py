@@ -23,8 +23,8 @@ def run_demo(model_file_name, output=""):
     if output != "":
 
         sphere = vtk.vtkSphereSource()
-        sphere.SetCenter(result[0][0], result[0][1], result[0][2])
-        sphere.SetRadius(result[0][3])
+        sphere.SetCenter(result.x[0], result.x[1], result.x[2])
+        sphere.SetRadius(result.x[3])
         sphere.SetThetaResolution(60)
         sphere.SetPhiResolution(60)
 
