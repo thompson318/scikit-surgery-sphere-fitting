@@ -2,7 +2,7 @@
 
 """Uses sphere fitting to fit to vtk model"""
 import vtk
-from numpy import inf
+from numpy import inf, mean, std
 from sksurgeryvtk.models.vtk_surface_model import VTKSurfaceModel
 from sksurgerycore.configuration.configuration_manager import (
         ConfigurationManager
@@ -16,7 +16,8 @@ def run_demo(model_file_name, output="", configfile=False):
     y_values = model.get_points_as_numpy()[:, 1]
     z_values = model.get_points_as_numpy()[:, 2]
 
-    initial_parameters = [0.0, 0.0, 0.0, 0.0]
+    initial_parameters = [mean(x_values), mean(y_values), mean(z_values),
+                          std(x_values)]
     bounds = ((-inf, -inf, -inf, -inf),
               (inf, inf, inf, inf))
 
@@ -39,7 +40,6 @@ def run_demo(model_file_name, output="", configfile=False):
                                                      bounds=bounds)
 
     print("Result is {}".format(result))
-    print("Result is", result.x)
 
     if output != "":
 
