@@ -22,6 +22,8 @@ def fit_sphere_least_squares(x_values, y_values, z_values, initial_parameters,
     """
     return least_squares(_calculate_residual_sphere, initial_parameters,
                          bounds=bounds,
+                         method='trf',
+                         jac='3-point',
                          args=(x_values, y_values, z_values))
 
 def _calculate_residual_sphere(parameters, x_values, y_values, z_values):
