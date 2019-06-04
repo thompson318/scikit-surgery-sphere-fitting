@@ -2,10 +2,14 @@
 
 """Uses sphere fitting to fit to vtk model"""
 import vtk
+from numpy import inf
 from sksurgeryvtk.models.vtk_surface_model import VTKSurfaceModel
+from sksurgerycore.configuration.configuration_manager import (
+        ConfigurationManager
+        )
 from sksurgeryspherefitting.algorithms import sphere_fitting
 
-def run_demo(model_file_name, output=""):
+def run_demo(model_file_name, output="", configfile=False):
     """ Run the application """
     model = VTKSurfaceModel(model_file_name, [1., 0., 0.])
     x_values = model.get_points_as_numpy()[:, 0]
@@ -13,10 +17,26 @@ def run_demo(model_file_name, output=""):
     z_values = model.get_points_as_numpy()[:, 2]
 
     initial_parameters = [0.0, 0.0, 0.0, 0.0]
+    bounds = ((-inf, -inf, -inf, -inf),
+              (inf, inf, inf, inf))
+
+    if configfile:
+        configurer = ConfigurationManager(configfile)
+        configuration = configurer.get_copy()
+        if "initial values" in configuration:
+            initial_parameters = configuration.get("initial values")
+        if "bounds" in configuration:
+            bounds = configuration.get("bounds")
+        if "fixed radius" in configuration:
+            radius = configuration.get("fixed radius")
+            bounds = ((-inf, -inf, -inf, radius),
+                      (inf, inf, inf, radius))
+
     result = sphere_fitting.fit_sphere_least_squares(x_values,
                                                      y_values,
                                                      z_values,
-                                                     initial_parameters)
+                                                     initial_parameters,
+                                                     bounds=bounds)
 
     print("Result is {}".format(result))
 
