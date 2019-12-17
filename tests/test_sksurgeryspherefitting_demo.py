@@ -17,7 +17,7 @@ def test_fit_sphere_config_demo():
     """ test the run demo entry point """
 
     model_name = 'data/US_Sphere_2.vtp'
-    config_name = 'data/config_init_with_bounds.json'
+    config_name = 'config/config_init_with_bounds.json'
 
     run_demo(model_name, configfile=config_name)
 
@@ -26,6 +26,6 @@ def test_fit_sphere_config_rad_demo():
     """ test the run demo entry point """
 
     model_name = 'data/US_Sphere_2.vtp'
-    config_name = 'data/config_fixed_radius.json'
+    config_name = 'config/config_fixed_radius.json'
 
     run_demo(model_name, configfile=config_name)
