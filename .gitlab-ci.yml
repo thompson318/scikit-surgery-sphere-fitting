@@ -5,7 +5,6 @@ variables:
 
 stages:
   - build
-  - installer
   - test
   - deploy
 
@@ -18,34 +17,6 @@ stages:
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /\[skip[ _-]build?\]/i
-
-.build-install-template: &build-install-template
-  script:
-    - tox -e installer
-  artifacts:
-    paths:
-      - dist/
-    expire_in: 1 week
-
-# The win/mac/linux build stages inherit settings
-# from build-install-template
-build linux installer:
-  <<: *build-skip-template
-  <<: *build-install-template
-  tags:
-    - shared-linux
-
-build mac installer:
-  <<: *build-skip-template
-  <<: *build-install-template
-  tags:
-    - shared-mac
-
-build windows installer:
-  <<: *build-skip-template
-  <<: *build-install-template
-  tags:
-    - shared-win
 
 build docs:
   <<: *build-skip-template
