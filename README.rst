@@ -19,6 +19,9 @@ scikit-surgery-sphere-fitting
     :target: http://scikit-surgery-sphere-fitting.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
+.. image:: https://zenodo.org/badge/259240969.svg
+   :target: https://zenodo.org/badge/latestdoi/259240969
+   :alt: DOI - zenodo
 
 Author: Stephen Thompson
 
