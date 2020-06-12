@@ -8,7 +8,6 @@ scikit-surgery-sphere-fitting
    :alt: Logo
 
 .. image:: https://github.com/thompson318/scikit-surgery-sphere-fitting/workflows/.github/workflows/ci.yml/badge.svg
-
    :target: https://github.com/thompson318/scikit-surgery-sphere-fitting/actions
    :alt: GitHub Actions CI status
 
@@ -19,7 +18,6 @@ scikit-surgery-sphere-fitting
 .. image:: https://readthedocs.org/projects/scikit-surgery-sphere-fitting/badge/?version=latest
     :target: http://scikit-surgery-sphere-fitting.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
-
 
 
 Author: Stephen Thompson
