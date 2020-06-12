@@ -1,5 +1,5 @@
 scikit-surgery-sphere-fitting
-===============================
+=============================
 
 .. image:: https://github.com/thompson318/scikit-surgery-sphere-fitting/raw/master/project-icon.png
    :height: 128px
@@ -7,12 +7,13 @@ scikit-surgery-sphere-fitting
    :target: https://github.com/thompson318/scikit-surgery-sphere-fitting
    :alt: Logo
 
-.. image:: https://github.com/thompson318/scikit-surgery-sphere-fitting/badges/master/build.svg
-   :target: https://github.com/thompson318/scikit-surgery-sphere-fitting/pipelines
-   :alt: GitLab-CI test status
+.. image:: https://github.com/thompson318/scikit-surgery-sphere-fitting/workflows/.github/workflows/ci.yml/badge.svg
 
-.. image:: https://coveralls.io/github/thompson318/scikit-surgery-sphere-fitting
-    :target: https://coveralls.io/github/thompson318/scikit-surgery-sphere-fitting
+   :target: https://github.com/thompson318/scikit-surgery-sphere-fitting/actions
+   :alt: GitHub Actions CI status
+
+.. image:: https://coveralls.io/github/thompson318/scikit-surgery-sphere-fitting/badge.svg?branch=master&service=github
+    :target: https://coveralls.io/github/thompson318/scikit-surgery-sphere-fitting?branch=master
     :alt: Test coverage
 
 .. image:: https://readthedocs.org/projects/scikit-surgery-sphere-fitting/badge/?version=latest
@@ -41,9 +42,9 @@ to some data.
 
 Citing
 ------
-If you use SciKit-Surgery-Sphere_Fitting in your research or teaching please cite it. Individual releases can be cited via the Zenodo tag. SciKit-Surgery should be cited as:
+If you use SciKit-Surgery-Sphere_Fitting in your research or teaching please cite it. Individual releases can be cited via the Zenodo tag above. SciKit-Surgery should be cited as:
 
-Thompson S, Dowrick T, Ahmad M, et al. "SciKit-Surgery: compact libraries for surgical navigation." International Journal of Computer Assisted Radiology and Surgery. 2020 May. DOI: 10.1007/s11548-020-02180-5.
+Thompson S, Dowrick T, Ahmad M, et al. "SciKit-Surgery: compact libraries for surgical navigation." International Journal of Computer Assisted Radiology and Surgery. 2020 May. DOI: `10.1007/s11548-020-02180-5`_.
 
 
 Developing
@@ -130,4 +131,4 @@ Supported by `Wellcome`_ and `EPSRC`_.
 .. _`EPSRC`: https://www.epsrc.ac.uk/
 .. _`contributing guidelines`: https://github.com/thompson318/scikit-surgery-sphere-fitting/blob/master/CONTRIBUTING.rst
 .. _`license file`: https://github.com/thompson318/scikit-surgery-sphere-fitting/blob/master/LICENSE
-
+.. _`10.1007/s11548-020-02180-5`: https://doi.org/10.1007/s11548-020-02180-5
