@@ -54,7 +54,7 @@ setup(
         'numpy>=1.11',
         'scipy',
         'vtk',
-        'scikit-surgeryvtk'
+        'scikit-surgeryvtk<9.0'
     ],
 
     entry_points={
