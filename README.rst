@@ -11,7 +11,7 @@ scikit-surgery-sphere-fitting
    :target: https://github.com/thompson318/scikit-surgery-sphere-fitting/actions
    :alt: GitHub Actions CI status
 
-.. image:: https://coveralls.io/github/thompson318/scikit-surgery-sphere-fitting/badge.svg?branch=master&service=github
+.. image:: https://coveralls.io/repos/github/thompson318/scikit-surgery-sphere-fitting/badge.svg?branch=master&service=github
     :target: https://coveralls.io/github/thompson318/scikit-surgery-sphere-fitting?branch=master
     :alt: Test coverage
 
@@ -40,7 +40,7 @@ to some data.
 
 Citing
 ------
-If you use SciKit-Surgery-Sphere_Fitting in your research or teaching please cite it. Individual releases can be cited via the Zenodo tag above. SciKit-Surgery should be cited as:
+If you use SciKit-Surgery-Sphere-Fitting in your research or teaching please cite it. Individual releases can be cited via the Zenodo tag above. SciKit-Surgery should be cited as:
 
 Thompson S, Dowrick T, Ahmad M, et al. "SciKit-Surgery: compact libraries for surgical navigation." International Journal of Computer Assisted Radiology and Surgery. 2020 May. DOI: `10.1007/s11548-020-02180-5`_.
 
