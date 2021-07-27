@@ -17,7 +17,7 @@ setup(
     description='scikit-surgery-sphere-fitting implements a least squares sphere fitting algorithm, to read a vtk poly data file, a config file, and outputs the fitted sphere',
     long_description=long_description,
     long_description_content_type='text/x-rst',
-    url='https://weisslab.cs.ucl.ac.uk/StephenThompson/sksurgeryspherefitting',
+    url='https://github.com/thompson318/scikit-surgery-sphere-fitting',
     author='Stephen Thompson',
     author_email='s.thompson@ucl.ac.uk',
     license='BSD-3 license',
